@@ -14,10 +14,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.define "boxen" do |boxen|
+    boxen.vm.synced_folder "our-boxen", "/opt/boxen/repo"
+
     $boxen_provisioning = "cd /opt/boxen/repo; " <<
       "./script/boxen --no-fde --debug --token=" << (ENV['GH_TOKEN'] || "")
-
-    boxen.vm.synced_folder "our-boxen", "/opt/boxen/repo"
     boxen.vm.provision "shell", inline: $boxen_provisioning, privileged: false
   end
 end
