@@ -10,10 +10,10 @@ Vagrant environment for testing and experiments inside OSX running via VMWare.
   - Increase the disk size (default is `20480` MB) as installing large packages from Homebrew and elsewhere may take up 20GB pretty quickly
   - Remove Parallels and Chef scripts as we won't need these
 3. Place the result box in the root of this repo as `mac-osx-10-10.box`
-4. Install Homebrew (which implies having _XCode CLI Tools_ installed)
-5. Install Brewcask `brew install caskroom/cask/brew-cask`
+4. Install [Homebrew](http://brew.sh/) (which implies having _XCode CLI Tools_ installed)
+5. Install [Brewcask](http://caskroom.io/) `brew install caskroom/cask/brew-cask`
 6. Install other tools: `brew cask install vagrant vmware-fusion`
-7. Install Vagrant VMWare plugin: `vagrant plugin install vagrant-vmware-fusion` and add license `vagrant plugin license vagrant-vmware-fusion license.lic`
+7. Install [Vagrant VMWare plugin](https://www.vagrantup.com/vmware): `vagrant plugin install vagrant-vmware-fusion` and add license `vagrant plugin license vagrant-vmware-fusion license.lic`
 
 ## Testing environments
 
