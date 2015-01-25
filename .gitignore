@@ -1,0 +1,12 @@
+.vagrant/
+.DS_Store
+
+*.box
+
+# following is expected to be symlinked
+dotfiles/
+homebrew/
+homebrew-cask/
+homebrew-completions/
+homebrew-versions/
+our-boxen/
