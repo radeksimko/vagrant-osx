@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "boxen" do |boxen|
     $boxen_provisioning = "cd /opt/boxen/repo" <<
-      "./script/boxen --no-fde --debug --token=" << ENV['GH_TOKEN']
+      "./script/boxen --no-fde --debug --token=" << (ENV['GH_TOKEN'] || "")
 
     boxen.vm.synced_folder "boxen", "/opt/boxen/repo", type: "nfs"
     boxen.vm.provision "shell", inline: $boxen_provisioning
