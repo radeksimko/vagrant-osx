@@ -17,6 +17,12 @@ Vagrant environment for testing and experiments inside OSX running via VMWare.
 
 ## Testing environments
 
+### Just pure OSX
+
+```sh
+vagrant up base
+```
+
 ### Boxen
 
 ```sh
