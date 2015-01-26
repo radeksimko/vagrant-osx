@@ -15,6 +15,21 @@ Vagrant environment for testing and experiments inside OSX running via VMWare.
 6. Install other tools: `brew cask install vagrant vmware-fusion`
 7. Install [Vagrant VMWare plugin](https://www.vagrantup.com/vmware): `vagrant plugin install vagrant-vmware-fusion` and add license `vagrant plugin license vagrant-vmware-fusion license.lic`
 
+## Caveats
+
+Boxen uses file-locking to ensure it's only running once.
+This doesn't work with the [default VMWare file-sync mechanism](https://docs.vagrantup.com/v2/synced-folders/basic_usage.html).
+
+This is why we use NFS, but that has a different caveat - each time you run `vagrant [up|reload]`,
+Vagrant will try to modify `/etc/exports` on your host machine, which will by default require your sudo password.
+
+A workaround could be allowing write for all admins on that system:
+
+```
+sudo chown root:admin /etc/exports
+sudo chmod g+w /etc/exports
+```
+
 ## Testing environments
 
 ### Just pure OSX
