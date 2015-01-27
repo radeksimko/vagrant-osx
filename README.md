@@ -30,6 +30,8 @@ sudo chown root:admin /etc/exports
 sudo chmod g+w /etc/exports
 ```
 
+while [having Vagrant `1.7.0+`](https://github.com/mitchellh/vagrant/commit/aa981cf4ec1492e33fef8dde1eb2d58b202285e6) installed.
+
 ## Testing environments
 
 ### Just pure OSX
