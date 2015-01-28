@@ -34,13 +34,8 @@ echo "%admin ALL=(root) NOPASSWD: /sbin/nfsd" >> /etc/sudoers
 ```
 
 <del>while [having Vagrant `1.7.0+`](https://github.com/mitchellh/vagrant/commit/aa981cf4ec1492e33fef8dde1eb2d58b202285e6) installed.</del>
-This workaround doesn't quite work yet as there's `sed` which tries to create temp files in `/etc` and fails to do so -> asks for sudo anyway:
 
-```
-sed: couldn't open temporary file /etc/sedRbDkfP: Permission denied
-```
-
-_Pull-request to vagrant is on the way._
+[This workaround doesn't quite work yet.](https://github.com/mitchellh/vagrant/pull/5259)
 
 ## Testing environments
 
