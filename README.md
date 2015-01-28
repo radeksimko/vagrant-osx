@@ -17,20 +17,28 @@ Vagrant environment for testing and experiments inside OSX running via VMWare.
 
 ## Caveats
 
+### Boxen & synced folders
 Boxen uses file-locking to ensure it's only running once.
 This doesn't work with the [default VMWare file-sync mechanism](https://docs.vagrantup.com/v2/synced-folders/basic_usage.html).
 
 This is why we use NFS, but that has a different caveat - each time you run `vagrant [up|reload]`,
 Vagrant will try to modify `/etc/exports` on your host machine, which will by default require your sudo password.
 
-A workaround could be allowing write for all admins on that system:
+<del>A workaround could be allowing write for all admins on that system:
 
 ```
 sudo chown root:admin /etc/exports
 sudo chmod g+w /etc/exports
 ```
 
-while [having Vagrant `1.7.0+`](https://github.com/mitchellh/vagrant/commit/aa981cf4ec1492e33fef8dde1eb2d58b202285e6) installed.
+while [having Vagrant `1.7.0+`](https://github.com/mitchellh/vagrant/commit/aa981cf4ec1492e33fef8dde1eb2d58b202285e6) installed.</del>
+This workaround doesn't quite work yet as there's `sed` which tries to create temp files in `/etc` and fails to do so -> asks for sudo anyway:
+
+```
+sed: couldn't open temporary file /etc/sedRbDkfP: Permission denied
+```
+
+_Pull-request to vagrant is on the way._
 
 ## Testing environments
 
