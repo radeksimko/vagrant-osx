@@ -24,14 +24,14 @@ This doesn't work with the [default VMWare file-sync mechanism](https://docs.vag
 This is why we use NFS, but that has a different caveat - each time you run `vagrant [up|reload]`,
 Vagrant will try to modify `/etc/exports` on your host machine, which will by default require your sudo password.
 
-<del>A workaround could be allowing write for all admins on that system:
+<del>A workaround could be allowing write for all admins on that system:</del>
 
 ```
 sudo chown root:admin /etc/exports
 sudo chmod g+w /etc/exports
 ```
 
-while [having Vagrant `1.7.0+`](https://github.com/mitchellh/vagrant/commit/aa981cf4ec1492e33fef8dde1eb2d58b202285e6) installed.</del>
+<del>while [having Vagrant `1.7.0+`](https://github.com/mitchellh/vagrant/commit/aa981cf4ec1492e33fef8dde1eb2d58b202285e6) installed.</del>
 This workaround doesn't quite work yet as there's `sed` which tries to create temp files in `/etc` and fails to do so -> asks for sudo anyway:
 
 ```
