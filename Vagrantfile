@@ -10,7 +10,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.insert_key = false
 
   # Prevent asking for password when no GUI is available
-  config.vm.provision "shell", path: "./setup-keychain.sh", privileged: false
+  config.vm.provision "shell", path: "./provision/setup-keychain.sh",
+    privileged: false
 
   config.vm.define "base" do |base|
   end
