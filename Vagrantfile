@@ -7,6 +7,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "mac-osx-10-10"
   config.vm.box_url = "./mac-osx-10-10.box"
 
+  config.ssh.insert_key = false
+
   # Prevent asking for password when no GUI is available
   config.vm.provision "shell", path: "./setup-keychain.sh", privileged: false
 
