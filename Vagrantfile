@@ -16,6 +16,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "base" do |base|
   end
 
+  config.vm.define "brew" do |brew|
+    config.vm.provision "shell", path: "./provision/install-homebrew.sh",
+      privileged: false
+  end
+
   config.vm.define "boxen" do |boxen|
     boxen.vm.synced_folder "our-boxen", "/opt/boxen/repo", type: "nfs"
 
