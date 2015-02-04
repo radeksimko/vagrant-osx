@@ -1,4 +1,4 @@
-if [[ `security list-keychains | wc -l` -eq 1 ]]; then
+if [[ `security list-keychains | grep default | wc -l` -eq 0 ]]; then
   security create-keychain -p vagrant default
 fi
 
