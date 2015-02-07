@@ -27,5 +27,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     $boxen_provisioning = "cd /opt/boxen/repo; " <<
       "./script/boxen --no-fde --debug --token=" << (ENV['GH_TOKEN'] || "")
     boxen.vm.provision "shell", inline: $boxen_provisioning, privileged: false
+
+    boxen.vm.provision "shell",
+      inline: "echo 'source /opt/boxen/env.sh' > ~/.bash_profile; " <<
+        "source ~/.bash_profile",
+      privileged: false
   end
 end
