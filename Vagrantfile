@@ -24,6 +24,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "boxen" do |boxen|
     boxen.vm.synced_folder "our-boxen", "/opt/boxen/repo", type: "nfs"
 
+    boxen.vm.provision "shell",
+      inline: "mkdir -p ~/src; " <<
+        "if [ ! -h ~/src/boxen ]; then ln -s /vagrant ~/src/boxen; fi",
+      privileged: false
+
     $boxen_provisioning = "cd /opt/boxen/repo; " <<
       "./script/boxen --no-fde --debug --token=" << (ENV['GH_TOKEN'] || "")
     boxen.vm.provision "shell", inline: $boxen_provisioning, privileged: false

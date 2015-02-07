@@ -3,6 +3,8 @@
 
 *.box
 
+puppet-*
+
 # following is expected to be symlinked
 dotfiles/
 homebrew/
