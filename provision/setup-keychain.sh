@@ -1,3 +1,5 @@
+echo "Setting up keychain..."
+
 if [[ `security list-keychains | grep default | wc -l` -eq 0 ]]; then
   security create-keychain -p vagrant default
 fi
