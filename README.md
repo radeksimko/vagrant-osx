@@ -6,7 +6,7 @@ Vagrant environment for testing and experiments inside OSX running via VMWare.
 
 1. Download a [fresh copy of OSX installer from AppStore](https://itunes.apple.com/gb/app/os-x-yosemite/id915041082?mt=12).
 2. Create a Vagrant OSX box via [`timsutton/osx-vm-templates`](https://github.com/timsutton/osx-vm-templates)
-  - Remove Parallels & Virtualbox builders as we only need VMWare box
+  - Use `--only=vmware-iso` to only use VMWare builder
   - Increase the disk size (default is `20480` MB) as installing large packages from Homebrew and elsewhere may take up 20GB pretty quickly
   - Remove Parallels and Chef scripts as we won't need these
 3. Place the result box in the root of this repo as `mac-osx-10-10.box`
