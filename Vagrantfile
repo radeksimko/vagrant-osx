@@ -29,7 +29,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     boxen.vm.synced_folder "our-boxen", "/opt/boxen/repo", type: "nfs"
 
     boxen.vm.provision "shell", path: "./provision/setup-boxen.sh",
-      args: [ (ENV['GH_TOKEN'] || ""), (ENV['UNLOCK_BOXEN'] || "" ) ],
+      args: [
+        (ENV['GH_TOKEN'] || ""),
+        (ENV['UNLOCK_BOXEN'] || ""),
+        (ENV['NO_PULL'] || "")
+      ],
       privileged: false
   end
 end
