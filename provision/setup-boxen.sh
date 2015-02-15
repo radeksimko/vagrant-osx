@@ -12,6 +12,7 @@ fi
 
 # Unlock boxen (necessary if it has been killed)
 if [ $UNLOCK ]; then
+  echo "Unlocking boxen..."
   ruby -e 'File.new("/opt/boxen/repo/script/boxen").flock File::LOCK_UN'
 fi
 
