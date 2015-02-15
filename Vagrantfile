@@ -23,7 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "boxen" do |boxen|
     # User facts
-    boxen.vm.synced_folder ".boxen", "/Users/vagrant/.boxen", type: "nfs"
+    boxen.vm.synced_folder ".boxen", "/Users/vagrant/.boxen"
     boxen.vm.synced_folder "config", "/opt/boxen/config"
 
     boxen.vm.synced_folder "our-boxen", "/opt/boxen/repo", type: "nfs"
