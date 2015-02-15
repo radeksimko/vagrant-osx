@@ -8,4 +8,5 @@ if [[ `security list-keychains | grep default | wc -l` -eq 0 ]]; then
   security set-keychain-settings default
 fi
 
+echo "Unlocking keychain..."
 security unlock-keychain -p vagrant
