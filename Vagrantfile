@@ -22,7 +22,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.define "boxen" do |boxen|
+    # User facts
     boxen.vm.synced_folder ".boxen", "/Users/vagrant/.boxen", type: "nfs"
+    boxen.vm.synced_folder "config", "/opt/boxen/config"
+
     boxen.vm.synced_folder "our-boxen", "/opt/boxen/repo", type: "nfs"
 
     boxen.vm.provision "shell", path: "./provision/setup-boxen.sh",
