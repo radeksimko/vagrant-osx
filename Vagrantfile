@@ -4,8 +4,8 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "mac-osx-10-10"
-  config.vm.box_url = "./mac-osx-10-10.box"
+  config.vm.box = "mac-osx-10-10-vmware"
+  config.vm.box_url = "./mac-osx-10-10-vmware.box"
 
   config.ssh.insert_key = false
 
