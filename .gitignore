@@ -11,8 +11,5 @@ config/*
 
 # following is expected to be symlinked
 dotfiles/
-homebrew/
-homebrew-cask/
-homebrew-completions/
-homebrew-versions/
+homebrew*
 our-boxen/
