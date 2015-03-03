@@ -21,3 +21,7 @@ else
   echo "Turning Homebrew Cask into DEV mode ..."
   ./developer/bin/develop_brew_cask
 fi
+
+echo "Linking all Homebrew taps from host ..."
+mkdir -p /usr/local/Library/Taps/vagrant
+ln -s /vagrant/homebrew-* /usr/local/Library/Taps/vagrant/ 2>/dev/null
