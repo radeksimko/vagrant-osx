@@ -51,8 +51,13 @@ vagrant up base
 ### Boxen
 Expects `./our-boxen` directory in the root, Vagrant will mount it & install accordingly.
 
+Available ENV variables:
+
+ - `GH_TOKEN` - Github token for Boxen
+ - `UNLOCK_BOXEN` (empty or 1) - whether to unlock boxen (sometimes necessary when you kill the instance in mid-flight)
+ - `NO_PULL` (empty or 1) - whether to pull down latest version of mounted `our-boxen` or not
+
 ```sh
-export GH_TOKEN=_FILL_THIS_IN_
 vagrant up boxen
 ```
 
