@@ -66,5 +66,14 @@ vagrant up boxen
 _TODO_
 
 ### Homebrew (Cask)
+This will install latest Homebrew + Brewcask, turn Brewcask into DEV mode and mount any directories named as `homebrew-*` as taps into the VM.
 
-_TODO_
+```sh
+vagrant up brew
+```
+
+#### Usage
+```sh
+vagrant ssh brew
+brew install vagrant/homebrew-mytap/package-name
+```
