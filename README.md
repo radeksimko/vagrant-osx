@@ -42,6 +42,7 @@ while [having Vagrant `1.7.0+`](https://github.com/mitchellh/vagrant/commit/aa98
 ## Testing environments
 
 ### Just pure OSX
+Just a pure OSX with no extra mountpoints/provisioners, works out of the box.
 
 ```sh
 vagrant up base
