@@ -48,6 +48,7 @@ vagrant up base
 ```
 
 ### Boxen
+Expects `./our-boxen` directory in the root, Vagrant will mount it & install accordingly.
 
 ```sh
 export GH_TOKEN=_FILL_THIS_IN_
