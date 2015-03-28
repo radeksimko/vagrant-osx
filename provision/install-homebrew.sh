@@ -8,7 +8,7 @@ fi
 
 cd /vagrant/homebrew-cask
 
-if [ ! -d /usr/local/Library/Taps/caskroom/homebrew-cask ]; then
+if [ ! -d $(brew --prefix)/Cellar/brew-cask ]; then
   echo "Installing Brewcask ..."
   brew install caskroom/cask/brew-cask
 else
