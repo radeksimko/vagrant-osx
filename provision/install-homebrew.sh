@@ -6,15 +6,15 @@ else
   echo "Homebrew is already installed"
 fi
 
+if [ ! -d $(brew --prefix)/Cellar/brew-cask ]; then
+  echo "Installing Brewcask ..."
+  brew install caskroom/cask/brew-cask
+else
+  echo "Brewcask is already installed"
+fi
+
 if [ -d /vagrant/homebrew-cask ]; then
   cd /vagrant/homebrew-cask
-
-  if [ ! -d $(brew --prefix)/Cellar/brew-cask ]; then
-    echo "Installing Brewcask ..."
-    brew install caskroom/cask/brew-cask
-  else
-    echo "Brewcask is already installed"
-  fi
 
   if [[ -e "./production_rubylib" ]]; then
     echo "Brewcask is already in DEV mode"
