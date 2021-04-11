@@ -12,7 +12,7 @@ Vagrant environment for testing and experiments inside OSX running via VMWare.
 3. Place the result box in the root of this repo as `mac-osx-10-10-vmware.box`
 4. Install [Homebrew](http://brew.sh/) (which implies having _XCode CLI Tools_ installed)
 5. Install [Brewcask](http://caskroom.io/) `brew install caskroom/cask/brew-cask`
-6. Install other tools: `brew cask install vagrant vmware-fusion`
+6. Install other tools: `brew install --cask vagrant vmware-fusion`
 7. Install [Vagrant VMWare plugin](https://www.vagrantup.com/vmware): `vagrant plugin install vagrant-vmware-fusion` and add license `vagrant plugin license vagrant-vmware-fusion license.lic`
 
 ## Caveats
